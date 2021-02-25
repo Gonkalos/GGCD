@@ -1,0 +1,1 @@
+java -jar Parser/target/parser-1.0-SNAPSHOT.jar IMDb\ Datasets/Mini\ Versions/title.basics.tsv.bz2 IMDb\ Datasets/Mini\ Versions/title.principals.tsv.bz2
