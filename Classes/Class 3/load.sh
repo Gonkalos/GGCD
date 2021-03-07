@@ -1,22 +1,19 @@
-# Load title.basics.tsv.gz into HDFS
+# Load title.basics.tsv into HDFS
 
+# Move to project directory
 cd docker-hadoop
-
-# Loading files from the Web
-#docker exec -it namenode bash
-#curl --output - https://storage.googleapis.com/ggcdimdb/mini/title.basics.tsv.bz2 | hdfs dfs -put - /title.basics.tsv.bz2
-
-# Loading files from the Web and decompressing GZip on-the-fly
-#docker exec -it namenode bash
-#curl --output - https://datasets.imdbws.com/name.basics.tsv.gz | gzip -d | hdfs dfs -put - /name.basics.tsv.gz
 
 # Uploading local file
 docker run --env-file hadoop.env \
 --network docker-hadoop_default \
 -v /Users/goncalo/Documents/University/Year\ 4/CD/GGCD/Classes/IMDb\ Datasets/Mini:/data \
 -it bde2020/hadoop-base \
-hdfs dfs -put /data/title.basics.tsv.bz2 /title.basics.tsv.bz2
+hdfs dfs -put /data/title.basics.tsv.bz2 /
 
+# Launch a Bash terminal within a container
 docker exec -it namenode bash
 
-#hdfs dfs -ls /
+# Loading file from the Web
+# curl --output - https://datasets.imdbws.com/title.basics.tsv.gz | hdfs dfs -put - /title.basics.tsv.gz
+
+# hdfs dfs -ls /
