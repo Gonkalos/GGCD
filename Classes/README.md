@@ -2,6 +2,7 @@
 
 ## Installation
 
+To install using Homebrew run the following command:
 ```
 brew install --cask google-cloud-sdk
 ```
