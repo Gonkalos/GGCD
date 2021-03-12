@@ -2,9 +2,9 @@
 
 ## Installation
 
-'''
+```
 brew install --cask google-cloud-sdk
-'''
+```
 
 ## Setup
 
