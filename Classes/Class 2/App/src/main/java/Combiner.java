@@ -9,7 +9,7 @@ import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import java.io.IOException;
 
-public class MovieCount {
+public class Combiner {
 
     public static class MyMapper extends Mapper<LongWritable, Text, Text, LongWritable> {
 
@@ -23,7 +23,7 @@ public class MovieCount {
         }
     }
 
-    public static class MyReducer extends Reducer<Text, LongWritable, Text, Text> {
+    public static class MyReducer extends Reducer<Text, LongWritable, Text, LongWritable> {
 
         @Override
         protected void reduce(Text key, Iterable<LongWritable> values, Context context) throws IOException, InterruptedException {
@@ -31,23 +31,26 @@ public class MovieCount {
             for (LongWritable value : values) {
                 total += value.get();
             }
-            context.write(key, new Text(Long.toString(total)));
+            context.write(key, new LongWritable(total));
         }
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
 
         // Create new job
-        Job job = Job.getInstance(new Configuration(), "moviecount");
+        Job job = Job.getInstance(new Configuration(), "combiner");
 
         // Set the jar where this classes are
-        job.setJarByClass(MovieCount.class);
+        job.setJarByClass(Combiner.class);
 
         // Mapper configuration
-        job.setMapperClass(MyMapper.class);
+        job.setMapperClass(MovieCount.MyMapper.class);
 
         // Reducer configuration
-        job.setReducerClass(MyReducer.class);
+        job.setReducerClass(MovieCount.MyReducer.class);
+
+        // Combiner configuration
+        job.setCombinerClass(MyReducer.class); // Combines the values before the reducer
 
         // Data communicated between Mapper and Reducer configuration
         job.setMapOutputKeyClass(Text.class);
@@ -55,7 +58,7 @@ public class MovieCount {
 
         // Input configuration
         job.setInputFormatClass(TextInputFormat.class);
-        TextInputFormat.setInputPaths(job, new Path("/Users/goncalo/Documents/University/Year 4/CD/GGCD/Classes/IMDb Datasets/Mini/title.basics.tsv.bz2"));
+        TextInputFormat.setInputPaths(job, new Path("/Users/goncalo/Documents/University/GGCD/Classes/IMDb Datasets/Mini/title.basics.tsv.bz2"));
 
         // Output configuration
         job.setOutputFormatClass(TextOutputFormat.class);

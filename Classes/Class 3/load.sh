@@ -6,7 +6,7 @@ cd docker-hadoop
 # Uploading local file
 docker run --env-file hadoop.env \
 --network docker-hadoop_default \
--v /Users/goncalo/Documents/University/Year\ 4/CD/GGCD/Classes/IMDb\ Datasets/Mini:/data \
+-v /Users/goncalo/Documents/University/GGCD/Classes/IMDb\ Datasets/Mini:/data \
 -it bde2020/hadoop-base \
 hdfs dfs -put /data/title.basics.tsv.bz2 /
 

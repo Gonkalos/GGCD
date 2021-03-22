@@ -1,5 +1,5 @@
 # Move to project directory
-cd Parser/
+cd App/
 
 # Build Maven project
 #mvn package

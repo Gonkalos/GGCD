@@ -1,5 +1,5 @@
 # Move to project directory
-cd Parser/
+cd App/
 
 # Build Maven project
 mvn package
@@ -9,7 +9,7 @@ docker build -t test .
 
 # Run Docker image
 docker run -it \
---env-file /Users/goncalo/Documents/University/Year\ 4/CD/GGCD/Classes/Class\ 3/docker-hadoop/hadoop.env \
+--env-file /Users/goncalo/Documents/University/GGCD/Classes/Class\ 3/docker-hadoop/hadoop.env \
 --network docker-hadoop_default test
 
 # Launch a Bash terminal within a container
