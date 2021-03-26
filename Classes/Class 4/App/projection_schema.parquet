@@ -1,0 +1,5 @@
+message Film {
+    required group genres (LIST) {
+        repeated binary genre (STRING);
+    }
+}
