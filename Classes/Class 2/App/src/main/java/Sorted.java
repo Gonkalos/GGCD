@@ -116,10 +116,10 @@ public class Sorted {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
 
-        // ------------------------------ Job 2 -------------------------------------
-
         // Execute job
         job.waitForCompletion(true);
+
+        // ------------------------------ Job 2 -------------------------------------
 
         // Create new job
         Job job2 = Job.getInstance(new Configuration(), "sort");
