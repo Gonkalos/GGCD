@@ -1,0 +1,15 @@
+ToParquet.class
+FromParquet$MyMapper.class
+FromParquet.class
+ValidateYears$MyMapper.class
+ComputeYears.class
+FromParquet$MyComparator.class
+ToParquet$BasicsMapper.class
+ComputeYears$MyReducer.class
+ValidateYears$MyReducer.class
+ToParquet$MyReducer.class
+ComputeYears$MyMapper.class
+ValidateYears.class
+ComputeYears$MyComparator.class
+FromParquet$MyReducer.class
+ToParquet$RatingsMapper.class

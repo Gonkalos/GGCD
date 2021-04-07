@@ -1,0 +1,15 @@
+message Movie {
+    required binary tconst (STRING);
+    required binary titleType (STRING);
+    required binary primaryTitle (STRING);
+    required binary originalTitle (STRING);
+    required binary isAdult (STRING);
+    required binary startYear (STRING);
+    required binary endYear (STRING);
+    required binary runtimeMinutes (STRING);
+    required group genres (LIST) {
+        repeated binary genre (STRING);
+    }
+    required double averageRating;
+    required int32 numVotes;
+}

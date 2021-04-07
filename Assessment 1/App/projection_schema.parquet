@@ -1,0 +1,7 @@
+message Movie {
+    required binary tconst (STRING);
+    required binary titleType (STRING);
+    required binary startYear (STRING);
+    required double averageRating;
+    required int32 numVotes;
+}
