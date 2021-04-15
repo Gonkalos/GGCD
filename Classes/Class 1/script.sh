@@ -9,5 +9,5 @@ docker build -t test .
 
 # Run process binding folder in host to folder in container
 docker run -it \
--v /Users/goncalo/Documents/University/GGCD/Classes/IMDb\ Datasets:/data \
-test /data/Mini/title.basics.tsv.bz2 /data/Mini/title.principals.tsv.bz2
+-v /Users/goncalo/Documents/University/GGCD/Classes/Data:/data \
+test /data/title.basics.tsv.bz2 /data/title.principals.tsv.bz2

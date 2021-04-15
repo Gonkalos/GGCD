@@ -107,8 +107,8 @@ public class Sorted {
         job.setMapOutputValueClass(Text.class);
 
         // Input configuration
-        MultipleInputs.addInputPath(job,new Path("/Users/goncalo/Documents/University/GGCD/Classes/IMDb Datasets/Mini/title.basics.tsv.bz2"), TextInputFormat.class, MyMapper.class);
-        MultipleInputs.addInputPath(job,new Path("/Users/goncalo/Documents/University/GGCD/Classes/IMDb Datasets/Mini/title.ratings.tsv.bz2"), TextInputFormat.class, MyMapper2.class);
+        MultipleInputs.addInputPath(job,new Path("/Users/goncalo/Documents/University/GGCD/Classes/Data/title.basics.tsv.bz2"), TextInputFormat.class, MyMapper.class);
+        MultipleInputs.addInputPath(job,new Path("/Users/goncalo/Documents/University/GGCD/Classes/Data/title.ratings.tsv.bz2"), TextInputFormat.class, MyMapper2.class);
 
         // Output configuration
         job.setOutputFormatClass(TextOutputFormat.class);

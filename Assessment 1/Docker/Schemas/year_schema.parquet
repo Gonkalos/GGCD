@@ -1,8 +1,0 @@
-message Year {
-    required int32 year;
-    required int32 totalMovies;
-    required binary mostVoted (UTF8);
-    required group topRated (LIST) {
-        repeated binary tconst (UTF8);
-    }
-}

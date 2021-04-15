@@ -58,7 +58,7 @@ public class Combiner {
 
         // Input configuration
         job.setInputFormatClass(TextInputFormat.class);
-        TextInputFormat.setInputPaths(job, new Path("/Users/goncalo/Documents/University/GGCD/Classes/IMDb Datasets/Mini/title.basics.tsv.bz2"));
+        TextInputFormat.setInputPaths(job, new Path("/Users/goncalo/Documents/University/GGCD/Classes/Data/title.basics.tsv.bz2"));
 
         // Output configuration
         job.setOutputFormatClass(TextOutputFormat.class);
